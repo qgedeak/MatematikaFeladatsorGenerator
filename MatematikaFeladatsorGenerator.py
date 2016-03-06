@@ -34,7 +34,7 @@ fuggvenyfajtak.append([([-3,3]),'lineáris', linearis])
 def fuggvenygen():
     return random.sample(fuggvenyfajtak ,4 )
     
-#%%
+
 pl.ion()    #külön szálra rakja a kirajzolót
 pl.show()   #így nem akasztja meg a kirajzolás a programot
 
@@ -51,8 +51,10 @@ for i in range(4):
 pl.draw()
 pl.pause(0.001) #azért kell, hogy frissítse a kirajzolt képet
 kiv=random.choice(negy) #elraktuk a kiválasztott függvényt
-valasz = int(input('Melyik a '+kiv[1]+' függvény? (0,1,2,3)')) #a bekért választ eltettük
-if kiv==negy[valasz]: #megnézzük, hogy jó választ adott-e
+valasz = int(input('Melyik a '+kiv[1]+' függvény? (1,2,3,4)'))-1 #a bekért választ eltettük
+if valasz>3 or valasz<0:
+    print ("A válasz 1 és 4 közötti szám lehet!")
+elif kiv==negy[valasz]: #megnézzük, hogy jó választ adott-e
     print ("Helyes a válasz!")
 else:
     print ("Gondold át újra!")
