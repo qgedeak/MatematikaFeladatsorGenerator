@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar  6 12:43:42 2016
+
+@author: Csaba
+
+
+Ez egy feladat generátor lenne.
+A feladatok vegyessek , de mind a matematika témaköreiből
+- Egyik feladat a függvény kitalálása
+"""
+
+#függvény kirajzó
+import numpy as np
+from matplotlib import pyplot as pl
+import random
+def xnegyzet(x):
+    return x*x
+def xkob(x):
+    return x*x*x
+def linearis(x):
+    return x
+fuggvenyfajtak=[]
+fuggvenyfajtak.append([([-3,3]),'sin', np.sin])
+fuggvenyfajtak.append([([-3,3]),'cos', np.cos])
+fuggvenyfajtak.append([([-3,3]),'abs', np.abs])
+fuggvenyfajtak.append([([-3,3]),'arctan', np.arctan])
+fuggvenyfajtak.append([([-3,3]),'tan', np.tan])
+fuggvenyfajtak.append([([-3,3]),'exp', np.exp])
+fuggvenyfajtak.append([([-3,3]),'x*x', xnegyzet])
+fuggvenyfajtak.append([([-3,3]),'x*x*x', xkob])
+fuggvenyfajtak.append([([-3,3]),'lineáris', linearis])
+def fuggvenygen():
+    return random.sample(fuggvenyfajtak ,4 )
+    
+negy = fuggvenygen()
+ax=[0,0,0,0]
+f, ((ax[0], ax[1]), (ax[2], ax[3])) = pl.subplots(2, 2, sharex='col', sharey='row')
+for i in range(4):
+    ax[i].set_title(['0','1','2','3'][i])
+    x = np.linspace(negy[i][0][0], negy[i][0][1], 1000)
+    ax[i].plot(x, negy[i][2](x),color='r')
+print('Melyik a '+random.choice(negy)[1]+' függvény? (0,1,2,3)')
+ 
+pl.show()
