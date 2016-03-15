@@ -53,7 +53,6 @@ kiv=random.choice(negy) #elraktuk a kiválasztott függvényt
 f.suptitle('Melyik a '+kiv[1]+' függvény? (1,2,3,4)',fontsize=18, color='b') #a cím helyén jelenik meg a kérdés és a válasz kiértékelése is.
 
 class Index(object):
-    ind = 0
     
     def jo(self,valasz):
         if kiv==negy[valasz]:
