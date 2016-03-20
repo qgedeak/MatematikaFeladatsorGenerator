@@ -110,12 +110,13 @@ def masodfoku(a,b,c):
        return [x1,x2]
        
 print("Add meg a másodfokú egyenlet együtthatóit!\n")
-a = int(input("Az első együttható: "))
-if a==0:
-    a=1
+a=0
+while a==0:
+    a = int(input("Az első együttható: "))
+    if a==0:
+        print("A másodfokú egyenlet első együtthatója nem lehet 0!")
+        print("Add meg újra!")
 b = int(input("A második együttható: "))
-if b==0:
-    b=1
 c = int(input("A harmadik együttható: "))
 
 print("Az egyenlet: ",end="") 
@@ -125,9 +126,9 @@ else:
     print(str(a)+"x^2",end="")
 if b==1:
     print("+x",end="")
-elif b>1:
+elif b>0:
     print("+"+str(b)+"x",end="")
-else:
+elif b<0:
     print(str(b)+"x",end="")
 if c>0:
     print("+"+str(c),end="")
