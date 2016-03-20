@@ -105,8 +105,8 @@ def masodfoku(a,b,c):
        return [-b/2*a]
     else:
        print ("Két eltérő valós gyök van.")
-       x1=(-b+sqrt(D))/2*a
-       x2=(-b-sqrt(D))/2*a
+       x1=(-b+sqrt(D))/(2*a)
+       x2=(-b-sqrt(D))/(2*a)
        return [x1,x2]
        
 print("Add meg a másodfokú egyenlet együtthatóit!\n")
