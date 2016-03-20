@@ -1,21 +1,21 @@
-
 # -*- coding: utf-8 -*-
 """
 Created on Sun Mar  6 12:43:42 2016
-
-@author: Csaba
-
+@author: Csaba & Vica 
 
 Ez egy feladat generátor lenne.
-A feladatok vegyesek , de mind a matematika témaköreiből
-- Egyik feladat a függvény kitalálása
+A feladatok vegyesek, de mind a matematika témaköreiből vannak:
+- első feladat: függvény kitalálása
+- második feladat: másodfokú egyenlet gyöke és képe.
 """
+
 
 #függvény kirajzó
 import numpy as np
 from matplotlib import pyplot as pl
 from matplotlib.widgets import Button
 import random
+from math import sqrt
 
 def xnegyzet(x):
     return x*x
@@ -91,3 +91,53 @@ bnegy = Button(axnegy, '4')
 bnegy.on_clicked(callback.negy)
 
 pl.show()
+
+#%%
+#másodfokú egyenlet
+def masodfoku(a,b,c):
+    D=b**2-4*a*c
+    print("\nA determináns: ", D)
+    if D < 0:
+       print ("Nincs valós gyök.")
+       return []
+    elif D==0:
+       print ("Kettős valós gyök van.")
+       return [-b/2*a]
+    else:
+       print ("Két eltérő valós gyök van.")
+       x1=(-b+sqrt(D))/2*a
+       x2=(-b-sqrt(D))/2*a
+       return [x1,x2]
+       
+print("Add meg a másodfokú egyenlet együtthatóit!\n")
+a = int(input("Az első együttható: "))
+if a==0:
+    a=1
+b = int(input("A második együttható: "))
+if b==0:
+    b=1
+c = int(input("A harmadik együttható: "))
+
+print("Az egyenlet: ",end="") 
+if a==1:
+    print("x^2",end="")
+else:
+    print(str(a)+"x^2",end="")
+if b==1:
+    print("+x",end="")
+elif b>1:
+    print("+"+str(b)+"x",end="")
+else:
+    print(str(b)+"x",end="")
+if c>0:
+    print("+"+str(c),end="")
+elif c<0:
+    print(str(c),end="")
+print("=0",end="")
+
+  
+megoldasok = masodfoku(a,b,c)
+
+for i,m in enumerate(megoldasok):
+    print("x"+str(i),"=",m)
+
