@@ -30,8 +30,8 @@ fuggvenyfajtak.append([([-3,3]),'abs', np.abs])
 fuggvenyfajtak.append([([-3,3]),'arctan', np.arctan])
 fuggvenyfajtak.append([([-3,3]),'tan', np.tan])
 fuggvenyfajtak.append([([-3,3]),'exp', np.exp])
-fuggvenyfajtak.append([([-3,3]),'x*x', xnegyzet])
-fuggvenyfajtak.append([([-3,3]),'x*x*x', xkob])
+fuggvenyfajtak.append([([-3,3]),'X^2', xnegyzet])
+fuggvenyfajtak.append([([-3,3]),'x^3', xkob])
 fuggvenyfajtak.append([([-3,3]),'lineáris', linearis])
 def fuggvenygen():
     return random.sample(fuggvenyfajtak ,4 )
@@ -105,8 +105,8 @@ def masodfoku(a,b,c):
        return [-b/2*a]
     else:
        print ("Két eltérő valós gyök van.")
-       x1=(-b+sqrt(D))/2*a
-       x2=(-b-sqrt(D))/2*a
+       x1=(-b+sqrt(D))/(2*a)
+       x2=(-b-sqrt(D))/(2*a)
        return [x1,x2]
        
 print("Add meg a másodfokú egyenlet együtthatóit!\n")
