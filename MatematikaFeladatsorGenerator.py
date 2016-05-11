@@ -91,6 +91,8 @@ bnegy = Button(axnegy, '4')
 bnegy.on_clicked(callback.negy)
 
 pl.show()
+<<<<<<< HEAD
+=======
 
 #%%
 #másodfokú egyenlet
@@ -142,3 +144,4 @@ megoldasok = masodfoku(a,b,c)
 for i,m in enumerate(megoldasok):
     print("x"+str(i),"=",m)
 
+>>>>>>> 42c84e437913a83ce031184ba1dac21a7815615a

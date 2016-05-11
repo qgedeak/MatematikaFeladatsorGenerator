@@ -269,13 +269,25 @@ def szoveges():
     globval.nap2=Decimal(globval.nap2)
     
     szoveg.insert(0,"Ha "+str(globval.ember1)+" ember "+str(globval.nap1)+" nap alatt ás fel egy kertet, akkor hány nap alatt ássa fel "+str(globval.ember2)+" ember?")
+    mainloop()   
     
     
-    
-    mainloop()
-    
-    
-szoveges()
-masodfokegy()
-fuggvenyes()
+def valasztas():
+    vablak = Tk()
+    vablak.title("Matematikai feladatgenerátor")    
+    vablak.geometry("430x300")
+    def sz_click():
+         szoveges()
+    sz=Button(vablak,text="Szöveges feladatok gyakorlása",command=sz_click,font="Helvetica 12 bold italic",fg="darkblue")
+    sz.grid(row=1,column=1,padx=20,pady=20)
+    def f_click():
+        fuggvenyes()
+    f=Button(vablak,text="Függvények grafikus megjelenésének gyakorlása",command=f_click,font="Helvetica 12 bold italic",fg="darkblue")
+    f.grid(row=2,column=1,padx=20,pady=20)
+    def m_click():
+         masodfokegy()
+    m=Button(vablak,text="Másodfokú egyenletek gyakorlása",command=m_click,font="Helvetica 12 bold italic",fg="darkblue")
+    m.grid(row=3,column=1,padx=20,pady=20)
+    mainloop()   
+valasztas()
 
